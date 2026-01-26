@@ -36,7 +36,7 @@ public class E07 {
         
             System.out.println("Numero fuera de rango");
         }
-        
+        sc.close();
     }
     
 }
