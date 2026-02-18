@@ -3,7 +3,6 @@ package EjerciciosFinalesArrays;
 /*2. Escribe la función void  desordenar(int  t[]), que cambia de forma aleatoria los 
 elementos contenidos en el array t. Si el array estuviera ordenado, dejaría de estarlo. 
  */
-import java.util.Arrays;
 import java.util.Random;
 public class E02 {
     public static void main(String[] args) {
