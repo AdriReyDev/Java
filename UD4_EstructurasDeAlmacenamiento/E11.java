@@ -56,6 +56,7 @@ public class E11 {
                 System.out.print(string + " ");
             }            
         }
+        sc.close();
     }
     
 //Funcion que crea la combinacion secreta
