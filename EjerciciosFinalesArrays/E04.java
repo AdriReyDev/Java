@@ -9,14 +9,13 @@ Una vez terminada la entrada de datos, muestra la siguiente información:
 
 package EjerciciosFinalesArrays;
 
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
 public class E04 {
 
-  //FUNCION SUELDOS DECRECIENTES
+  // ********** Función sueldos decrecientes **********
   static Integer[] sueldosDecreciente(Integer[] sueldos) {
 
     Integer[] copySueldos = Arrays.copyOf(sueldos, sueldos.length);
@@ -25,7 +24,7 @@ public class E04 {
     return copySueldos;
   }
 
-  //FUNCION SUELDOS MAXIMO Y MINIMO
+  // ********** Cálculo de máximo y mínimo **********
   static Integer[] sueldosMaxMin(Integer[] sueldos) {
 
     Integer[] copySueldos = Arrays.copyOf(sueldos, sueldos.length);
@@ -39,32 +38,29 @@ public class E04 {
       if (copySueldos[i] > max) {
         max = copySueldos[i];
       }
-      maxMin[0] = max;
-    }
-
-    for (int j = 0; j < maxMin.length; j++) {
-
-      if (copySueldos[j] < min) {
-        min = copySueldos[j];
+      if (copySueldos[i] < min) {
+        min = copySueldos[i];
       }
-      maxMin[maxMin.length-1] = min;
+
     }
+    maxMin[maxMin.length - 1] = min;
+    maxMin[0] = max;
 
     return maxMin;
   }
 
-  //FUNCION MEDIA DE LOS SUELDOS
-  static int sueldosMedia(Integer[] sueldos) {
+  // ********** Cálculo de máximo y mínimo *********
+  static double sueldosMedia(Integer[] sueldos) {
     int media = 0;
 
     for (int i = 0; i < sueldos.length; i++) {
-      media = media + sueldos[i];    
+      media = media + sueldos[i];
     }
 
-    return media / sueldos.length -1;
+    return media / sueldos.length;
   }
 
-  //CLASE MAIN
+  // CLASE MAIN
   public static void main(String[] args) {
 
     Scanner sc = new Scanner(System.in);
@@ -79,19 +75,19 @@ public class E04 {
     while (salario != -1) {
 
       i++;
-      //EN CADA ITERACION DEL BUCLE SE CREA UNA COPIA DEL ARRAY Y SE SUMA UN INDICE
+      // EN CADA ITERACION DEL BUCLE SE CREA UNA COPIA DEL ARRAY Y SE SUMA UN INDICE
       sueldos = Arrays.copyOf(sueldos, sueldos.length + 1);
 
-      //LA ULTIMA POSICION DEL ARRAY RECIBE EL NUEVO DATO INTRODUCIDO
+      // LA ULTIMA POSICION DEL ARRAY RECIBE EL NUEVO DATO INTRODUCIDO
       sueldos[sueldos.length - 1] = salario;
 
-      //SE VUELVE A LANZAR EL MENSAJE PARA INTRODUCIR EL SIGUIENTE DATO
+      // SE VUELVE A LANZAR EL MENSAJE PARA INTRODUCIR EL SIGUIENTE DATO
       System.out.printf("Introduce sueldo persona %d: ", i + 1);
       salario = sc.nextInt();
 
     }
 
-    //IMPRESION EN PANTALLA DE LA PETICION DE DATOS
+    // IMPRESION EN PANTALLA DE LA PETICION DE DATOS
     System.out.println();
     System.out.println("----Lista sueldos decrecientes----");
     System.out.println(Arrays.toString(sueldosDecreciente(sueldos)));
