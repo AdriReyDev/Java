@@ -60,7 +60,7 @@ public class E04 {
     return media / sueldos.length;
   }
 
-  // CLASE MAIN
+  
   public static void main(String[] args) {
 
     Scanner sc = new Scanner(System.in);
@@ -75,19 +75,19 @@ public class E04 {
     while (salario != -1) {
 
       i++;
-      // EN CADA ITERACION DEL BUCLE SE CREA UNA COPIA DEL ARRAY Y SE SUMA UN INDICE
+      // ********* En cada iteracion del bucle de crea una copia del array y se suma un indice *********
       sueldos = Arrays.copyOf(sueldos, sueldos.length + 1);
 
-      // LA ULTIMA POSICION DEL ARRAY RECIBE EL NUEVO DATO INTRODUCIDO
+      // ********** La ultima posición del array recibe el nuevo dato introducido *********
       sueldos[sueldos.length - 1] = salario;
 
-      // SE VUELVE A LANZAR EL MENSAJE PARA INTRODUCIR EL SIGUIENTE DATO
+      // ********** Se vuelve a lanzar el mensaje para introducir el siguiente dato *********
       System.out.printf("Introduce sueldo persona %d: ", i + 1);
       salario = sc.nextInt();
 
     }
 
-    // IMPRESION EN PANTALLA DE LA PETICION DE DATOS
+    // ********* Impresión del resultado de los datos *********
     System.out.println();
     System.out.println("----Lista sueldos decrecientes----");
     System.out.println(Arrays.toString(sueldosDecreciente(sueldos)));
